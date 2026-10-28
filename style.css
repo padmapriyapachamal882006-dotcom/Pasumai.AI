@@ -1,0 +1,97 @@
+/* Pasumai AgriScan - Stylesheet */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Mukta+Malar:wght@400;600;700&display=swap');
+
+:root {
+  --primary-green: #15803d;
+  --accent-green: #22c55e;
+  --light-bg: #f8fafc;
+}
+
+body {
+  font-family: 'Inter', 'Mukta Malar', system-ui, -apple-system, sans-serif;
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+
+/* Pulsing AI Laser Scan Beam */
+.scanner-viewfinder {
+  position: relative;
+  overflow: hidden;
+}
+
+.scanner-viewfinder::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #22c55e, #86efac, #22c55e, transparent);
+  box-shadow: 0 0 15px #22c55e, 0 0 30px #22c55e;
+  animation: scanSweep 2.2s infinite ease-in-out;
+  pointer-events: none;
+}
+
+@keyframes scanSweep {
+  0% {
+    top: 5%;
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    top: 95%;
+    opacity: 0.2;
+  }
+}
+
+/* Custom Reticle Overlay */
+.camera-reticle {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  right: 10%;
+  bottom: 10%;
+  border: 2px dashed rgba(255, 255, 255, 0.4);
+  border-radius: 16px;
+  pointer-events: none;
+}
+
+/* Leaflet Map Height & Custom Markers */
+#field-map-container {
+  height: 540px;
+  width: 100%;
+  border-radius: 0.75rem;
+  z-index: 10;
+}
+
+.custom-field-pin {
+  background: transparent;
+  border: none;
+}
+
+.drone-icon {
+  background: transparent;
+  border: none;
+}
+
+/* Print Optimization for Farmer Prescription Card */
+@media print {
+  body {
+    background: #fff;
+    color: #000;
+  }
+  nav, .nav-tab-btn, #btn-voice-readout, #btn-start-camera, #btn-drone-scan, .filter-btn, #preset-samples-container, header, footer {
+    display: none !important;
+  }
+  #scanner-report-panel {
+    display: block !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+  }
+  .print-prescription-header {
+    display: block !important;
+  }
+}
