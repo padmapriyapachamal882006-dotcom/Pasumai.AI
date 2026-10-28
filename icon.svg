@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#14532d"/>
+      <stop offset="50%" stop-color="#15803d"/>
+      <stop offset="100%" stop-color="#166534"/>
+    </linearGradient>
+    <linearGradient id="leafGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#86efac"/>
+      <stop offset="50%" stop-color="#22c55e"/>
+      <stop offset="100%" stop-color="#15803d"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Rounded App Icon Background -->
+  <rect width="512" height="512" rx="110" fill="url(#bgGrad)"/>
+
+  <!-- Radar / Scan Rings -->
+  <circle cx="256" cy="256" r="210" fill="none" stroke="#4ade80" stroke-width="4" stroke-opacity="0.25" stroke-dasharray="12,12"/>
+  <circle cx="256" cy="256" r="150" fill="none" stroke="#4ade80" stroke-width="4" stroke-opacity="0.35"/>
+  <circle cx="256" cy="256" r="90" fill="none" stroke="#86efac" stroke-width="4" stroke-opacity="0.45"/>
+
+  <!-- Scanning Reticle Corners -->
+  <path d="M 120 170 L 120 120 L 170 120" fill="none" stroke="#facc15" stroke-width="12" stroke-linecap="round"/>
+  <path d="M 392 170 L 392 120 L 342 120" fill="none" stroke="#facc15" stroke-width="12" stroke-linecap="round"/>
+  <path d="M 120 342 L 120 392 L 170 392" fill="none" stroke="#facc15" stroke-width="12" stroke-linecap="round"/>
+  <path d="M 392 342 L 392 392 L 342 392" fill="none" stroke="#facc15" stroke-width="12" stroke-linecap="round"/>
+
+  <!-- Center Sprout / Leaf Shape -->
+  <g transform="translate(256,260)">
+    <!-- Right Leaf -->
+    <path d="M 0 50 C 40 -20, 110 -60, 110 -130 C 50 -130, 10 -70, 0 50 Z" fill="url(#leafGrad)"/>
+    <!-- Left Leaf -->
+    <path d="M 0 50 C -35 -10, -95 -45, -95 -105 C -45 -105, -5 -50, 0 50 Z" fill="#4ade80"/>
+    <!-- Stem -->
+    <path d="M 0 50 Q -5 95, 0 115" stroke="#86efac" stroke-width="10" stroke-linecap="round" fill="none"/>
+  </g>
+
+  <!-- Horizontal Laser Scan Line -->
+  <line x1="80" y1="256" x2="432" y2="256" stroke="#22c55e" stroke-width="6" stroke-linecap="round" filter="drop-shadow(0 0 8px #4ade80)"/>
+</svg>
